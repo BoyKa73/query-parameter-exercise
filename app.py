@@ -39,5 +39,15 @@ def search():
     return f"Suche nach: {query}, Sortierung: {sort_by}"
     
 # http://127.0.0.1:5000/search?s=python&sort=relevance
+
+# Neue Route Produkte anlegen/Hausaufgabe
+@app.route("/produkte")
+def search_produkte():
+    wert = request.args.get('kategorie')
+    if wert is None:
+        return "Zeige alle Produkte"
+    return f"Zeige Produkte aus der Kategorie: {wert} "
+
+
 if __name__ == "__main__":
     app.run(debug=True)
